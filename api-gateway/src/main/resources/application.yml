@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    consul:
+      discovery:
+        enabled: true
+        register: true
+        service-name: api-gateway
+  profiles:
+    active: consul
+server:
+  port: 8080
+
+cloud:
+  gateway:
+    routes:
+      - id: product-service
+        uri: lb://product-service
+        predicates:
+          - Path=/api/products/**
+      - id: client-service
+        uri: lb://client-service
+        predicates:
+          - Path=/api/clients/**

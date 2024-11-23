@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: client-service  # Service name for discovery
+  datasource:
+    url: jdbc:mysql://localhost:3306/clientservice
+    username: root
+    password: Lunardefectvs4*
+  jpa:
+    hibernate:
+      ddl-auto: update
+  cloud:
+    consul:
+      discovery:
+        enabled: true
+        register: true
+        service-name: client-service  # Name registered in Consul
+
+server:
+  port: 8081  # Port for client-service

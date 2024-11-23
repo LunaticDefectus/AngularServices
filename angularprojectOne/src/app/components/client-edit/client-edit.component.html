@@ -1,0 +1,22 @@
+<div>
+  <form (ngSubmit)=" updateClient()">
+    <div>
+      <label for="nom">Nom:</label>
+      <input type="text" id="nom" [(ngModel)]="client.name" name="nom" required />
+    </div>
+
+    <div>
+      <label for="tel">Téléphone:</label>
+      <input type="text" id="tel" [(ngModel)]="client.phone" name="tel" required />
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" [(ngModel)]="client.email" name="email" required />
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" [(ngModel)]="client.password" name="password" required />
+    </div>
+    <button type="submit">{{ client.id ? 'Update' : 'Add' }}</button>
+  </form>
+</div>

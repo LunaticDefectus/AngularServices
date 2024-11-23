@@ -1,0 +1,27 @@
+<div class="client-list-card">
+  <h2>Client List</h2>
+  <a routerLink="/add-client">Add Client</a>
+
+  <table class="client-table">
+    <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Téléphone</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let client of clients">
+      <td>{{ client.name }}</td>
+      <td>{{ client.phone }}</td>
+      <td>{{ client.email }}</td>
+      <td>{{ client.password }}</td>
+      <td>
+        <a [routerLink]="['/edit-client', client.id]">Edit</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
